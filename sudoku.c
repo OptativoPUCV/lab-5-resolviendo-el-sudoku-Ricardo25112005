@@ -52,18 +52,15 @@ int is_valid(Node* n){
 List* get_adj_nodes(Node* n){
   List* list = createList();
   int i, j;
-
-  // Encontrar la primera casilla vacía (con valor 0)
   for (i = 0; i < 9; i++) {
       for (j = 0; j < 9; j++) {
           if (n->sudo[i][j] == 0) {
-              // Generar 9 nodos adyacentes con valores del 1 al 9 en la casilla vacía
               for (int val = 1; val <= 9; val++) {
-                  Node* new_node = copy(n); // Copiar el nodo original
-                  new_node->sudo[i][j] = val; // Asignar el nuevo valor
-                  pushBack(list, new_node); // Agregar el nodo a la lista
+                  Node* new_node = copy(n);
+                  new_node->sudo[i][j] = val;
+                  pushBack(list, new_node);
               }
-              return list; // Retornar la lista después de procesar la primera casilla vacía
+              return list;
           }
       }
   }
