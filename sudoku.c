@@ -130,7 +130,7 @@ Node* DFS(Node* initial, int* cont){
         pop(S);
         (*cont)++;
         if (is_final(current)) {
-            return NULL;
+            return;
         }
         List* adj_nodes = get_adj_nodes(current);
         Node* adj;
